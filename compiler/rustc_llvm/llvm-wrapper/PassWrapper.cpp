@@ -373,6 +373,7 @@ enum class LLVMRustRelocModel {
   Static,
   PIC,
   DynamicNoPic,
+  EPIC,
   ROPI,
   RWPI,
   ROPIRWPI,
@@ -386,6 +387,8 @@ static Reloc::Model fromRust(LLVMRustRelocModel RustReloc) {
     return Reloc::PIC_;
   case LLVMRustRelocModel::DynamicNoPic:
     return Reloc::DynamicNoPIC;
+  case LLVMRustRelocModel::EPIC:
+    return Reloc::EPIC;
   case LLVMRustRelocModel::ROPI:
     return Reloc::ROPI;
   case LLVMRustRelocModel::RWPI:
